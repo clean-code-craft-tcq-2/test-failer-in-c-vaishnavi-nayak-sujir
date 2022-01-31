@@ -28,8 +28,8 @@ void alertInCelcius(float celcius,int (*fnPtrForNetworkAlert)(float)) {
     }
 }
 
-
-int main() {
+void testcode_main(){
+	
 	int (*fnPtrForNetworkAlert)(float) = networkAlertStub;
 	float temp_celcius = convertFarenheitToCelcius(400.5);
     alertInCelcius(temp_celcius,fnPtrForNetworkAlert);
@@ -42,5 +42,11 @@ int main() {
 	assert(alertFailureCount==2);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
+}
+
+
+int main() {
+	test_code_main();
+	// production code can be added here. Test code is isolated
     return 0;
 }

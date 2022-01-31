@@ -46,7 +46,7 @@ void testcode_main(){
 
 
 int main() {
-	test_code_main();
+	testcode_main();
 	// production code can be added here. Test code is isolated
     return 0;
 }

@@ -2,6 +2,7 @@
 #include <assert.h>
 #include "modularity.h"
 
+
 enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
 enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
 
@@ -36,10 +37,10 @@ int printColorMap() {
 	const char* minor_color;
     int i = 0, j = 0;
     for(i = 0; i < 5; i++) {
-        for(j = 1; j <= 5; j++) {
-			pair_num = i * 5 + j;
+        for(j = 0; j < 5; j++) {
+			pair_num = i * 5 + j+1;
 			major_color = majorColor[i];
-			minor_color = minorColor[j-1];
+			minor_color = minorColor[j];
 			print_console(pair_num,major_color,minor_color);
 			testNumberToPair(pair_num,major_color,minor_color);
         }
@@ -50,6 +51,7 @@ int printColorMap() {
 
 int main() {
     int result = printColorMap();
+    assert(result == 25);
     printf("All is well (maybe!)\n");
     return 0;
 }
